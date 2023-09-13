@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mole-game</title>
+    <style>
+      body {
+        background: #000;
+      }
+      .bar {
+        display: grid;
+        grid-template-columns: 15rem 15rem 15rem;
+        grid-template-rows: 15rem 15rem 15rem;
+        transform: perspective(5cm) rotateX(7deg) rotateY(-2deg) scale(0.8);
+margin: auto;;
+        margin: auto;
+        width: fit-content;
+        padding: 3rem 3rem 0rem 3rem;
+        background: #423200fa;
+        background-image: url(./grass.jpg);
+        background-size: 40%;
+        border-radius: 2rem;
+      }
+      .cell {
+      }
+      .cell img {
+        width: 100%;
+        filter: hue-rotate(-50deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bar">
+      <div class="cell"><img src="./dr.png" /></div>
+      <div class="cell"><img src="./dr.png" /></div>
+      <div class="cell"><img src="./dr.png" /></div>
+      <div class="cell"><img src="./dr.png" /></div>
+      <div class="cell"><img src="./dr.png" /></div>
+      <div class="cell"><img src="./dr.png" /></div>
+      <div class="cell"><img src="./dr.png" /></div>
+      <div class="cell"><img src="./dr.png" /></div>
+      <div class="cell"><img src="./dr.png" /></div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
