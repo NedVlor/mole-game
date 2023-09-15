@@ -26,10 +26,15 @@
       .cell img {
         width: 100%;
       }
+      .hummer {
+        position: absolute;
+        z-index:100;
+      }
     </style>
   </head>
   <body>
-    <audio controls src="./src/hamster.mp3" style="display: none;"></audio>
+    <audio controls src="./src/hamster.mp3" style="display: none"></audio>
+    <img class="hummer" src="./src/hummer.png" />
     <div class="bar">
       <div class="cell" id="0" onclick="clickOnCell(0)">
         <img src="./dr.png" />
