@@ -23,5 +23,12 @@ function clickOnCell(cellNumber) {
   console.log(cellNumber, rand);
   if (cellNumber == rand) {
     console.log("boom");
+    const audio = document.querySelector("audio");
+    console.log(audio);
+    audio.currentTime = 8;
+    audio.play(); //8-10 sec
+    setTimeout(() => {
+      audio.pause();
+    }, 1500);
   }
 }
