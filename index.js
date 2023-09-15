@@ -1,3 +1,4 @@
+let rand;
 const cells = document.querySelectorAll(".bar .cell");
 setTimeout(() => {
   console.log(cells[5].innerHTML);
@@ -6,10 +7,21 @@ setTimeout(() => {
 }, 3000);
 const random = () => Math.round(Math.random() * 8);
 setInterval(() => {
-  console.log(random());
-  const rand = random();
+  rand = random();
   cells[rand].innerHTML = '<img src="./sas.png" />';
   setTimeout(() => {
     cells[rand].innerHTML = '<img src="./dr.png" />';
   }, 1000);
 }, 2000);
+cells.forEach((cell) => {
+  console.log(cell);
+  cell.addEventListener("click", (event) => {
+    //    console.log(event);
+  });
+});
+function clickOnCell(cellNumber) {
+  console.log(cellNumber, rand);
+  if (cellNumber == rand) {
+    console.log("boom");
+  }
+}
