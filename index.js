@@ -1,6 +1,7 @@
 let rand;
 const cells = document.querySelectorAll(".bar .cell");
-const bar = document.querySelectorAll(".bar");
+const bar = document.querySelector(".bar");
+const hummer = document.querySelector(".hummer");
 
 // example
 setTimeout(() => {
@@ -21,6 +22,17 @@ setInterval(() => {
 //hummer movement
 bar.addEventListener("click", (event) => {
   console.log(event);
+  const x = event.clientX;
+  const y = event.clientY;
+  console.log(x, y);
+  hummer.style.left = x + "px";
+  hummer.style.top = y + "px";
+  hummer.style.transform = "rotate(115deg)";
+  setTimeout(() => {
+    hummer.style.left = 0 + "px";
+    hummer.style.top = 600 + "px";
+    hummer.style.transform = "rotate(0deg)";
+  }, 1000);
 });
 
 //comper hitting with sus position and some actions
