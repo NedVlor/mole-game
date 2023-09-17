@@ -27,14 +27,25 @@
         width: 100%;
       }
       .hummer {
+        position: fixed;
+z-index: 100;
+bottom: 0;
+left: 0;
+      }
+      .heard {
         position: absolute;
-        z-index:100;
+        z-index: 100;
+        width: 7rem;
+        height: 6rem;
       }
     </style>
   </head>
   <body>
     <audio controls src="./src/hamster.mp3" style="display: none"></audio>
     <img class="hummer" src="./src/hummer.png" />
+    <img class="heard" src="./src/heard.png" />
+    <img class="heard" src="./src/heard.png" />
+    <img class="heard" src="./src/heard.png" />
     <div class="bar">
       <div class="cell" id="0" onclick="clickOnCell(0)">
         <img src="./dr.png" />
