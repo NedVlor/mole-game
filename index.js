@@ -2,6 +2,8 @@ let rand;
 const cells = document.querySelectorAll(".bar .cell");
 const bar = document.querySelector(".bar");
 const hummer = document.querySelector(".hummer");
+const audio = document.querySelector("#hamster-sound");
+const punchSound = document.querySelector("#punch-sound");
 
 // example
 setTimeout(() => {
@@ -28,6 +30,7 @@ bar.addEventListener("click", (event) => {
   hummer.style.left = x - 251 + "px";
   hummer.style.top = y - 210 + "px";
   hummer.style.transform = "rotate(115deg)";
+  punchSound.play();
   setTimeout(() => {
     hummer.style.left = 0 + "px";
     hummer.style.top = 600 + "px";
@@ -40,7 +43,6 @@ function clickOnCell(cellNumber) {
   console.log(cellNumber, rand);
   if (cellNumber == rand) {
     console.log("boom");
-    const audio = document.querySelector("audio");
     console.log(audio);
     audio.currentTime = 8;
     audio.play(); //8-10 sec
