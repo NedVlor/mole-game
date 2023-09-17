@@ -25,8 +25,8 @@ bar.addEventListener("click", (event) => {
   const x = event.clientX;
   const y = event.clientY;
   console.log(x, y);
-  hummer.style.left = x + "px";
-  hummer.style.top = y + "px";
+  hummer.style.left = x - 251 + "px";
+  hummer.style.top = y - 210 + "px";
   hummer.style.transform = "rotate(115deg)";
   setTimeout(() => {
     hummer.style.left = 0 + "px";
