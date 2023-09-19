@@ -1,11 +1,13 @@
 let rand;
 let life = 3;
+let userLife = 3;
 const cells = document.querySelectorAll(".bar .cell");
 const bar = document.querySelector(".bar");
 const hummer = document.querySelector(".hummer");
 const audio = document.querySelector("#hamster-sound");
 const punchSound = document.querySelector("#punch-sound");
-const hearts = document.querySelector(".hearts");
+const heartsSus = document.querySelector(".left .hearts");
+const heartsUser = document.querySelector(".right .hearts");
 refreshHeartsInPanel();
 // example
 setTimeout(() => {
@@ -48,6 +50,12 @@ function clickOnCell(cellNumber) {
     setTimeout(() => {
       life--;
       refreshHeartsInPanel();
+      if (life < 1) {
+        hamsterAttack();
+        life = 3;
+        userLife--;
+        refreshHeartsInPanel();
+      }
     }, 1000);
     console.log("boom");
     console.log(audio);
@@ -60,8 +68,15 @@ function clickOnCell(cellNumber) {
 }
 
 function refreshHeartsInPanel() {
-  hearts.innerHTML = "";
+  heartsSus.innerHTML = "";
   for (let i = 0; i < life; i++) {
-    hearts.innerHTML += '<img class="heart" src="./src/heard.png"/>';
+    heartsSus.innerHTML += '<img class="heart" src="./src/heard.png"/>';
   }
+  heartsUser.innerHTML = "";
+  for (let i = 0; i < userLife; i++) {
+    heartsUser.innerHTML += '<img class="heart" src="./src/heard.png"/>';
+  }
+}
+function hamsterAttack() {
+  alert();
 }
