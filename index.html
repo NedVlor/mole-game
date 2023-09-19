@@ -33,12 +33,15 @@
         left: 0;
         transition: 0.1s ease-in;
       }
-      .heard {
-        position: absolute;
+      .panel{
+ position: absolute;
         z-index: 100;
+      }
+      .heart { 
         width: 7rem;
         height: 6rem;
       }
+      
     </style>
   </head>
   <body>
@@ -55,9 +58,13 @@
       style="display: none"
     ></audio>
     <img class="hummer" src="./src/hummer.png" />
-    <img class="heard" src="./src/heard.png" />
-    <img class="heard" src="./src/heard.png" />
-    <img class="heard" src="./src/heard.png" />
+    <div class="panel">
+      <div class="hearts">
+        <img class="heart" src="./src/heard.png" />
+        <img class="heart" src="./src/heard.png" />
+        <img class="heart" src="./src/heard.png" />
+      </div>
+    </div>
     <div class="bar">
       <div class="cell" id="0" onclick="clickOnCell(0)">
         <img src="./dr.png" />

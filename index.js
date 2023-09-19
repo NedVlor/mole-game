@@ -18,6 +18,7 @@ setInterval(() => {
   cells[rand].innerHTML = '<img src="./sas.png" />';
   setTimeout(() => {
     cells[rand].innerHTML = '<img src="./dr.png" />';
+    rand = null;
   }, 1000);
 }, 2000);
 
