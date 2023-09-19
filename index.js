@@ -1,10 +1,12 @@
 let rand;
+let life = 3;
 const cells = document.querySelectorAll(".bar .cell");
 const bar = document.querySelector(".bar");
 const hummer = document.querySelector(".hummer");
 const audio = document.querySelector("#hamster-sound");
 const punchSound = document.querySelector("#punch-sound");
-
+const hearts = document.querySelector(".hearts");
+refreshHeartsInPanel();
 // example
 setTimeout(() => {
   console.log(cells[5].innerHTML);
@@ -39,10 +41,14 @@ bar.addEventListener("click", (event) => {
   }, 1000);
 });
 
-//comper hitting with sus position and some actions
+//compare hitting with sus position and some actions
 function clickOnCell(cellNumber) {
   console.log(cellNumber, rand);
   if (cellNumber == rand) {
+    setTimeout(() => {
+      life--;
+      refreshHeartsInPanel();
+    }, 1000);
     console.log("boom");
     console.log(audio);
     audio.currentTime = 8;
@@ -50,5 +56,12 @@ function clickOnCell(cellNumber) {
     setTimeout(() => {
       audio.pause();
     }, 1500);
+  }
+}
+
+function refreshHeartsInPanel() {
+  hearts.innerHTML = "";
+  for (let i = 0; i < life; i++) {
+    hearts.innerHTML += '<img class="heart" src="./src/heard.png"/>';
   }
 }

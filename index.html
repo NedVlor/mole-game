@@ -5,6 +5,7 @@
     <style>
       body {
         background: #181a1e;
+        margin: 0;
       }
       .bar {
         display: grid;
@@ -33,15 +34,37 @@
         left: 0;
         transition: 0.1s ease-in;
       }
-      .panel{
- position: absolute;
+      .panel {
+        position: absolute;
         z-index: 100;
+        display: flex;
+        padding: 0.5rem;
+        justify-content: space-between;
+        width: 100%;
+        box-sizing: border-box;
       }
-      .heart { 
+      .left {
+        display: flex;
+      }
+
+      .right {
+        display: flex;
+      }
+      .heart {
         width: 7rem;
         height: 6rem;
+        margin-left: 1rem;
       }
-      
+      .right .heart{
+margin-left:0;
+margin-right:1rem;
+      }
+      .avatar {
+        width: 6rem;
+        height: 6rem;
+        background: black;
+        border-radius: 6rem;
+      }
     </style>
   </head>
   <body>
@@ -59,10 +82,21 @@
     ></audio>
     <img class="hummer" src="./src/hummer.png" />
     <div class="panel">
-      <div class="hearts">
-        <img class="heart" src="./src/heard.png" />
-        <img class="heart" src="./src/heard.png" />
-        <img class="heart" src="./src/heard.png" />
+      <div class="left">
+        <div class="avatar"></div>
+        <div class="hearts">
+          <img class="heart" src="./src/heard.png" />
+          <img class="heart" src="./src/heard.png" />
+          <img class="heart" src="./src/heard.png" />
+        </div>
+      </div>
+      <div class="right">
+        <div class="hearts">
+          <img class="heart" src="./src/heard.png" />
+          <img class="heart" src="./src/heard.png" />
+          <img class="heart" src="./src/heard.png" />
+        </div>
+        <div class="avatar"></div>
       </div>
     </div>
     <div class="bar">
