@@ -8,6 +8,8 @@ const audio = document.querySelector("#hamster-sound");
 const punchSound = document.querySelector("#punch-sound");
 const heartsSus = document.querySelector(".left .hearts");
 const heartsUser = document.querySelector(".right .hearts");
+const effects = document.querySelector(".effects");
+
 refreshHeartsInPanel();
 // example
 setTimeout(() => {
@@ -78,5 +80,8 @@ function refreshHeartsInPanel() {
   }
 }
 function hamsterAttack() {
-  alert();
+  effects.style.display = "flex";
+  setTimeout(() => {
+    effects.style.display = "none";
+  }, 1000);
 }
