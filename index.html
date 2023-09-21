@@ -78,6 +78,19 @@
         background: #ff06062b;
         display: none;
       }
+      .game-over-screen {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        alight-items: center;
+        background: #ff06062b;
+        /*display: none;*/
+      }
     </style>
   </head>
   <body>
@@ -115,6 +128,9 @@
     <div class="effects">
       <img src="./src/attack.png" />
     </div>
+    <div class="game-over-screen">
+      <img src="./" />
+    </div>
     <div class="bar">
       <div class="cell" id="0" onclick="clickOnCell(0)">
         <img src="./dr.png" />
@@ -146,7 +162,7 @@
     </div>
     <script src="index.js"></script>
     <script>
-    /* 
+      /* 
       const bar = document.querySelector(".bar");
       for (let i = 0; i < 9; i++) {
         console.log(i);

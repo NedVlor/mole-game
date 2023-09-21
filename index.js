@@ -9,6 +9,7 @@ const punchSound = document.querySelector("#punch-sound");
 const heartsSus = document.querySelector(".left .hearts");
 const heartsUser = document.querySelector(".right .hearts");
 const effects = document.querySelector(".effects");
+const gameOverScreen = document.querySelector(".game-over-scareen");
 
 refreshHeartsInPanel();
 // example
@@ -36,6 +37,7 @@ bar.addEventListener("click", (event) => {
   console.log(x, y);
   hummer.style.left = x - 251 + "px";
   hummer.style.top = y - 210 + "px";
+
   hummer.style.transform = "rotate(115deg)";
   punchSound.play();
   setTimeout(() => {
@@ -57,6 +59,9 @@ function clickOnCell(cellNumber) {
         life = 3;
         userLife--;
         refreshHeartsInPanel();
+      }
+      if (userLife < 1) {
+        gameOver();
       }
     }, 1000);
     console.log("boom");
@@ -84,4 +89,7 @@ function hamsterAttack() {
   setTimeout(() => {
     effects.style.display = "none";
   }, 1000);
+}
+function gameOver() {
+  gameOverScreen.style.display = "flex";
 }
