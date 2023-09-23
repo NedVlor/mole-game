@@ -107,6 +107,23 @@
       .retry:active {
         box-shadow: 0 0px 10px black;
       }
+      .you-win-screen {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+            background: rgb(0 0 0 / 68%);
+        /* display: none;*/
+        flex-direction: column;
+      }
+      .you-win-screen img {
+        filter: drop-shadow(0px 0px 150px #fff);
+      }
     </style>
   </head>
   <body>
@@ -146,6 +163,10 @@
     </div>
     <div class="game-over-screen">
       <img src="./src/gameOvr.webp" />
+      <img onclick="retry()" class="retry" src="./src/retry.png" />
+    </div>
+    <div class="you-win-screen">
+      <img src="./src/youWin.png" />
       <img onclick="retry()" class="retry" src="./src/retry.png" />
     </div>
     <div class="bar">
