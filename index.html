@@ -74,7 +74,7 @@
         height: 100vh;
         display: flex;
         justify-content: center;
-        alight-items: center;
+        align-items: center;
         background: #ff06062b;
         display: none;
       }
@@ -87,9 +87,25 @@
         height: 100vh;
         display: flex;
         justify-content: center;
-        alight-items: center;
+        align-items: center;
         background: #ff06062b;
         /*display: none;*/
+        flex-direction: column;
+      }
+      .game-over-screen img {
+        filter: drop-shadow(0px 0px 150px #fff);
+      }
+      .retry {
+        border-radius: 2rem;
+        margin-top: 3rem;
+        box-shadow: 0 7px 30px black;
+        transition:.3s;
+      }
+      .retry:hover {
+        box-shadow: 0 18px 50px black;
+      }
+      .retry:active {
+        box-shadow: 0 0px 10px black;
       }
     </style>
   </head>
@@ -129,7 +145,8 @@
       <img src="./src/attack.png" />
     </div>
     <div class="game-over-screen">
-      <img src="./" />
+      <img src="./src/gameOvr.webp" />
+      <img class="retry" src="./src/retry.png" />
     </div>
     <div class="bar">
       <div class="cell" id="0" onclick="clickOnCell(0)">
