@@ -10,7 +10,8 @@ const punchSound = document.querySelector("#punch-sound");
 const heartsSus = document.querySelector(".left .hearts");
 const heartsUser = document.querySelector(".right .hearts");
 const effects = document.querySelector(".effects");
-const gameOverScreen = document.querySelector(".game-over-scareen");
+const gameOverScreen = document.querySelector(".game-over-screen");
+const youWinScreen = document.querySelector(".you-win-screen");
 
 refreshHeartsInPanel();
 // example
@@ -106,5 +107,5 @@ function retry() {
   }, 1000);
 }
 function won() {
-  alert("won");
+  youWinScreen.style.display = "flex";
 }
