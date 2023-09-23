@@ -1,6 +1,7 @@
 let rand;
 let life = 3;
 let userLife = 3;
+let attempts = 3;
 const cells = document.querySelectorAll(".bar .cell");
 const bar = document.querySelector(".bar");
 const hummer = document.querySelector(".hummer");
@@ -50,13 +51,19 @@ bar.addEventListener("click", (event) => {
 //compare hitting with sus position and some actions
 function clickOnCell(cellNumber) {
   console.log(cellNumber, rand);
+  attempts--;
   if (cellNumber == rand) {
+    // <-- colizion
     setTimeout(() => {
       life--;
       refreshHeartsInPanel();
       if (life < 1) {
+        won();
+      }
+      if (attempts < 1) {
         hamsterAttack();
         life = 3;
+        attempts = 3;
         userLife--;
         refreshHeartsInPanel();
       }
@@ -92,4 +99,12 @@ function hamsterAttack() {
 }
 function gameOver() {
   gameOverScreen.style.display = "flex";
+}
+function retry() {
+  setTimeout(() => {
+    location.reload();
+  }, 1000);
+}
+function won() {
+  alert("won");
 }

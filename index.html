@@ -89,7 +89,7 @@
         justify-content: center;
         align-items: center;
         background: #ff06062b;
-        /*display: none;*/
+        display: none;
         flex-direction: column;
       }
       .game-over-screen img {
@@ -99,7 +99,7 @@
         border-radius: 2rem;
         margin-top: 3rem;
         box-shadow: 0 7px 30px black;
-        transition:.3s;
+        transition: 0.3s;
       }
       .retry:hover {
         box-shadow: 0 18px 50px black;
@@ -146,7 +146,7 @@
     </div>
     <div class="game-over-screen">
       <img src="./src/gameOvr.webp" />
-      <img class="retry" src="./src/retry.png" />
+      <img onclick="retry()" class="retry" src="./src/retry.png" />
     </div>
     <div class="bar">
       <div class="cell" id="0" onclick="clickOnCell(0)">
