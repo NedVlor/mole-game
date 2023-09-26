@@ -8,9 +8,9 @@ const hummer = document.querySelector(".hummer");
 const audio = document.querySelector("#hamster-sound");
 const punchSound = document.querySelector("#punch-sound");
 const monsterSound = document.querySelector("#monster-sound");
-const uWin = document.querySelector("#u-win");
-const szwing = document.querySelector("#szwing");
-const gameOver = document.querySelector("#game-over");
+const uWinSound = document.querySelector("#u-win");
+const szwingSound = document.querySelector("#szwing");
+const gameOverSound = document.querySelector("#game-over");
 const heartsSus = document.querySelector(".left .hearts");
 const heartsUser = document.querySelector(".right .hearts");
 const effects = document.querySelector(".effects");
@@ -63,7 +63,7 @@ function clickOnCell(cellNumber) {
       life--;
       refreshHeartsInPanel();
       if (life < 1) {
-        won();
+        return won();
       }
       if (attempts < 1) {
         hamsterAttack();
@@ -97,6 +97,8 @@ function refreshHeartsInPanel() {
   }
 }
 function hamsterAttack() {
+  monsterSound.play();
+  szwingSound.play();
   effects.style.display = "flex";
   setTimeout(() => {
     effects.style.display = "none";
@@ -104,6 +106,7 @@ function hamsterAttack() {
 }
 function gameOver() {
   gameOverScreen.style.display = "flex";
+  gameOverSound.play();
 }
 function retry() {
   setTimeout(() => {
@@ -112,4 +115,5 @@ function retry() {
 }
 function won() {
   youWinScreen.style.display = "flex";
+  uWinSound.play();
 }
