@@ -16,6 +16,7 @@ const heartsUser = document.querySelector(".right .hearts");
 const effects = document.querySelector(".effects");
 const gameOverScreen = document.querySelector(".game-over-screen");
 const youWinScreen = document.querySelector(".you-win-screen");
+const hamsterFairy = document.querySelector(".hamster-fairy");
 
 refreshHeartsInPanel();
 // example
@@ -117,3 +118,6 @@ function won() {
   youWinScreen.style.display = "flex";
   uWinSound.play();
 }
+setInterval(() => {
+  hamsterFairy.style.right = "100px";
+}, 3000);
