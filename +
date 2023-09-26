@@ -7,15 +7,16 @@ const bar = document.querySelector(".bar");
 const hummer = document.querySelector(".hummer");
 const audio = document.querySelector("#hamster-sound");
 const punchSound = document.querySelector("#punch-sound");
-const monsterSound = document.querySelector("#monster-sound");
-const uWin = document.querySelector("#u-win");
-const szwing = document.querySelector("#szwing");
-const gameOver = document.querySelector("#game-over");
+const punchSound = document.querySelector("#punch-sound");
+const punchSound = document.querySelector("#punch-sound");
+const punchSound = document.querySelector("#punch-sound");
+const punchSound = document.querySelector("#punch-sound");
 const heartsSus = document.querySelector(".left .hearts");
 const heartsUser = document.querySelector(".right .hearts");
 const effects = document.querySelector(".effects");
 const gameOverScreen = document.querySelector(".game-over-screen");
 const youWinScreen = document.querySelector(".you-win-screen");
+monster-sound
 
 refreshHeartsInPanel();
 // example
