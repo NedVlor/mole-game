@@ -120,4 +120,10 @@ function won() {
 }
 setInterval(() => {
   hamsterFairy.style.right = "100px";
-}, 3000);
+}, 300);
+setInterval(() => {
+  hamsterFairy.src = "./src/fairy-2.png";
+  setTimeout(() => {
+    hamsterFairy.src = "./src/fairy-1.png";
+  }, 150);
+}, 300);

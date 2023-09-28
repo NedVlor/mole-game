@@ -41,6 +41,20 @@
         right: -200px;
         transition: 1s ease-in;
         width: 150px;
+        filter: drop-shadow(0 0 1.25rem gold);
+        animation: mymove 5s infinite;
+      }
+
+      @keyframes mymove {
+        0% {
+          top: 100px;
+        }
+        50% {
+          top: 200px;
+        }
+        100% {
+          top: 100px;
+        }
       }
 
       .panel {
