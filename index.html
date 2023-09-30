@@ -44,23 +44,6 @@
         filter: drop-shadow(0 0 1.25rem gold);
         animation: mymove 5s infinite;
       }
-      .hamster-fairy::before {
-        content: url("./src/heard.png");
-        position: absolute;
-        z-index: 91;
-        top: 0;
-        left: 0;
-        content: "";
-        background: url("./src/heard.png"); /*url of image*/
-        height: 16px; /*height of image*/
-        width: 33px; /*width of image*/
-        position: absolute;
-      }
-
-      .hamster-fairy::after {
-        content: "test";
-      }
-
       @keyframes mymove {
         0% {
           top: 100px;
@@ -211,7 +194,7 @@
       src="./src/u-win.wav"
       style="display: none"
     ></audio>
-    <img class="hamster-fairy" src="./src/fairy.jpg" />
+    <img class="hamster-fairy" src="./src/fairy.jpg" onclick="getAwayFairy()" />
     <img class="hummer" src="./src/hummer.png" />
     <div class="panel">
       <div class="left">

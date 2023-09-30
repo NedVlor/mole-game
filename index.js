@@ -37,7 +37,7 @@ setInterval(() => {
 }, 2000);
 
 //hummer movement
-bar.addEventListener("click", (event) => {
+function hammerMovement(event) {
   console.log(event);
   const x = event.clientX;
   const y = event.clientY;
@@ -52,7 +52,9 @@ bar.addEventListener("click", (event) => {
     hummer.style.top = 600 + "px";
     hummer.style.transform = "rotate(0deg)";
   }, 1000);
-});
+}
+bar.addEventListener("click", hammerMovement);
+hamsterFairy.addEventListener("click", hammerMovement);
 
 //compare hitting with sus position and some actions
 function clickOnCell(cellNumber) {
@@ -118,9 +120,20 @@ function won() {
   youWinScreen.style.display = "flex";
   uWinSound.play();
 }
+
+/////////////////////////////////////////////////// hamster fairy block
+//
+// muve fairy to game area
 setInterval(() => {
   hamsterFairy.style.right = "100px";
-}, 300);
+}, 3000);
+
+//get away fairy
+function getAwayFairy() {
+  hamsterFairy.style.right = "-200px";
+}
+
+//wings animation
 setInterval(() => {
   hamsterFairy.src = "./src/fairy-2.png";
   setTimeout(() => {
