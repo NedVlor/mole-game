@@ -122,15 +122,19 @@ function won() {
 }
 
 /////////////////////////////////////////////////// hamster fairy block
-//
+
+let isHamsterFairyActive = false;
+
 // muve fairy to game area
 setInterval(() => {
   hamsterFairy.style.right = "100px";
+  isHamsterFairyActive = true;
 }, 3000);
 
 //get away fairy
 function getAwayFairy() {
   hamsterFairy.style.right = "-200px";
+  isHamsterFairyActive = false;
 }
 
 //wings animation
@@ -140,3 +144,11 @@ setInterval(() => {
     hamsterFairy.src = "./src/fairy-1.png";
   }, 150);
 }, 300);
+
+// hamster fairy healing per 1sec
+
+setInterval(() => {
+  if (isHamsterFairyActive) {
+    console.log("healing");
+  }
+}, 1000);
