@@ -17,6 +17,7 @@ const effects = document.querySelector(".effects");
 const gameOverScreen = document.querySelector(".game-over-screen");
 const youWinScreen = document.querySelector(".you-win-screen");
 const hamsterFairy = document.querySelector(".hamster-fairy");
+const healingHeart = document.querySelector(".healing-heart");
 
 refreshHeartsInPanel();
 // example
@@ -128,13 +129,17 @@ let isHamsterFairyActive = false;
 // muve fairy to game area
 setInterval(() => {
   hamsterFairy.style.right = "100px";
-  isHamsterFairyActive = true;
-}, 3000);
+  setTimeout(() => {
+    isHamsterFairyActive = true;
+    healingHeart.style.display = "block";
+  }, 1000);
+}, 7000);
 
 //get away fairy
 function getAwayFairy() {
   hamsterFairy.style.right = "-200px";
   isHamsterFairyActive = false;
+  healingHeart.style.display = "none";
 }
 
 //wings animation
@@ -150,5 +155,7 @@ setInterval(() => {
 setInterval(() => {
   if (isHamsterFairyActive) {
     console.log("healing");
+    if (life < 3) life++;
+    refreshHeartsInPanel();
   }
 }, 1000);
