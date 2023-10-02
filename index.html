@@ -169,9 +169,19 @@
         /*display: none;*/
         flex-direction: column;
       }
-      .start-screen img {
+      .start-screen .buttons img {
         /*filter: drop-shadow(0px 0px 150px #fff);*/
+        animation: police 1s infinite;
       }
+      @keyframes police {
+        0% {
+          filter: drop-shadow(0px 0px 15px #fff);
+        }
+        100% {
+          filter: drop-shadow(0px 0px 150px #fff);
+        }
+      }
+
       .healing-heart {
         position: fixed;
         width: 2rem;
@@ -282,7 +292,7 @@
         <img src="./src/start-button.png" onclick="start()" />
         <img src="./src/play-button.png" onclick="start()" />
       </div>
-        </div>
+    </div>
     <div class="effects">
       <img src="./src/attack.png" draggable="false" />
     </div>
