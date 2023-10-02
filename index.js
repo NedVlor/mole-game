@@ -23,16 +23,16 @@ refreshHeartsInPanel();
 // example
 setTimeout(() => {
   console.log(cells[5].innerHTML);
-  cells[5].innerHTML = '<img src="./dr.png" />';
+  cells[5].innerHTML = '<img src="./dr.png"  draggable="false"/>';
 }, 3000);
 
 // random showing sus
 const random = () => Math.round(Math.random() * 8);
 setInterval(() => {
   rand = random();
-  cells[rand].innerHTML = '<img src="./sas.png" />';
+  cells[rand].innerHTML = '<img src="./sas.png" draggable="false"/>';
   setTimeout(() => {
-    cells[rand].innerHTML = '<img src="./dr.png" />';
+    cells[rand].innerHTML = '<img src="./dr.png" draggable="false"/>';
     rand = null;
   }, 1000);
 }, 2000);
@@ -93,11 +93,13 @@ function clickOnCell(cellNumber) {
 function refreshHeartsInPanel() {
   heartsSus.innerHTML = "";
   for (let i = 0; i < life; i++) {
-    heartsSus.innerHTML += '<img class="heart" src="./src/heard.png"/>';
+    heartsSus.innerHTML +=
+      '<img class="heart" src="./src/heard.png" draggable="false"/>';
   }
   heartsUser.innerHTML = "";
   for (let i = 0; i < userLife; i++) {
-    heartsUser.innerHTML += '<img class="heart" src="./src/heard.png"/>';
+    heartsUser.innerHTML +=
+      '<img class="heart" src="./src/heard.png" draggable="false"/>';
   }
 }
 function hamsterAttack() {
@@ -159,3 +161,10 @@ setInterval(() => {
     refreshHeartsInPanel();
   }
 }, 1000);
+
+//prevent draging for img
+document.addEventListener("dragstart", function (event) {
+  if (event.target.tagName == "IMG") {
+    event.preventDefault();
+  }
+});

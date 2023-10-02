@@ -164,7 +164,7 @@
         transition: 1s ease-in;
         filter: drop-shadow(0 0 1.25rem gold);
         animation: mymoveHeart 5s infinite;
-        display:none;
+        display: none;
       }
       @keyframes mymoveHeart {
         0% {
@@ -180,6 +180,14 @@
           opacity: 0;
         }
       }
+      img {
+    -moz-user-select: none; /* Firefox */
+    -webkit-user-select: none; /* Chrome/Safari */
+    -ms-user-select: none; /* IE */
+    user-select: none; /* Standard */
+    pointer-events: none; /* Make it not clickable */
+}
+
     </style>
   </head>
   <body>
@@ -219,65 +227,80 @@
       src="./src/u-win.wav"
       style="display: none"
     ></audio>
-    <img class="hamster-fairy" src="./src/fairy.jpg" onclick="getAwayFairy()" />
-    <img class="hummer" src="./src/hummer.png" />
-    <img class="healing-heart" src="./src/heard.png" />
+    <img
+      class="hamster-fairy"
+      src="./src/fairy.jpg"
+      onclick="getAwayFairy()"
+      draggable="false"
+    />
+    <img class="hummer" src="./src/hummer.png" draggable="false" />
+    <img class="healing-heart" src="./src/heard.png" draggable="false" />
     <div class="panel">
       <div class="left">
         <div class="avatarB"></div>
         <div class="hearts">
-          <img class="heart" src="./src/heard.png" />
-          <img class="heart" src="./src/heard.png" />
-          <img class="heart" src="./src/heard.png" />
+          <img class="heart" src="./src/heard.png" draggable="false" />
+          <img class="heart" src="./src/heard.png" draggable="false" />
+          <img class="heart" src="./src/heard.png" draggable="false" />
         </div>
       </div>
       <div class="right">
         <div class="hearts">
-          <img class="heart" src="./src/heard.png" />
-          <img class="heart" src="./src/heard.png" />
-          <img class="heart" src="./src/heard.png" />
+          <img class="heart" src="./src/heard.png" draggable="false" />
+          <img class="heart" src="./src/heard.png" draggable="false" />
+          <img class="heart" src="./src/heard.png" draggable="false" />
         </div>
         <div class="avatarA"></div>
       </div>
     </div>
     <div class="effects">
-      <img src="./src/attack.png" />
+      <img src="./src/attack.png" draggable="false" />
     </div>
     <div class="game-over-screen">
-      <img src="./src/gameOvr.webp" />
-      <img onclick="retry()" class="retry" src="./src/retry.png" />
+      <img src="./src/gameOvr.webp" draggable="false" />
+      <img
+        onclick="retry()"
+        class="retry"
+        src="./src/retry.png"
+        draggable="false"
+      />
     </div>
     <div class="you-win-screen">
-      <img src="./src/youWin.png" />
-      <img onclick="retry()" class="retry" src="./src/retry.png" />
+      <img src="./src/youWin.png" draggable="false" />
+      <img
+        onclick="retry()"
+        class="retry"
+        src="./src/retry.png"
+        draggable="false"
+      />
     </div>
     <div class="bar">
       <div class="cell" id="0" onclick="clickOnCell(0)">
-        <img src="./dr.png" />
+        <img src="./dr.png" draggable="false" />
       </div>
       <div class="cell" id="1" onclick="clickOnCell(1)">
-        <img src="./dr.png" />
+        <img src="./dr.png" draggable="false" />
       </div>
       <div class="cell" id="2" onclick="clickOnCell(2)">
-        <img src="./dr.png" />
+        <img src="./dr.png" draggable="false" />
       </div>
       <div class="cell" id="3" onclick="clickOnCell(3)">
-        <img src="./dr.png" />
+        <img src="./dr.png" draggable="false" />
       </div>
       <div class="cell" id="4" onclick="clickOnCell(4)">
-        <img src="./dr.png" />
+        <img src="./dr.png" draggable="false" />
       </div>
       <div class="cell" id="5" onclick="clickOnCell(5)">
-        <img src="./sas.png" />
+        <img src="./sas.png" draggable="false" />
       </div>
       <div class="cell" id="6" onclick="clickOnCell(6)">
-        <img src="./dr.png" />
+        <img src="./dr.png" draggable="false" />
       </div>
       <div class="cell" id="7" onclick="clickOnCell(7)">
-        <img src="./dr.png" />
+        <img src="./dr.png" draggable="false" />
       </div>
       <div class="cell" id="8" onclick="clickOnCell(8)">
-        <img src="./dr.png" />
+        <img src="./dr.png" draggable="false" />
       </div>
     </div>
     <script src="index.js"></script>
