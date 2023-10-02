@@ -185,8 +185,9 @@
         -webkit-user-select: none; /* Chrome/Safari */
         -ms-user-select: none; /* IE */
         user-select: none; /* Standard */
-       /* pointer-events: none;  Make it not clickable */
+        /* pointer-events: none;  Make it not clickable */
       }
+      b
     </style>
   </head>
   <body>
@@ -226,7 +227,19 @@
       src="./src/u-win.wav"
       style="display: none"
     ></audio>
-    <img class="hamster-fairy" src="./src/fairy.jpg" onclick="getAwayFairy()" draggable="false" />
+    <audio
+      id="healing-sound"
+      controls
+      src="./src/csink.mp3"
+      style="display: none"
+    ></audio>
+
+    <img
+      class="hamster-fairy"
+      src="./src/fairy.jpg"
+      onclick="getAwayFairy()"
+      draggable="false"
+    />
     <img class="hummer" src="./src/hummer.png" draggable="false" />
     <img class="healing-heart" src="./src/heard.png" draggable="false" />
     <div class="panel">
@@ -247,6 +260,7 @@
         <div class="avatarA"></div>
       </div>
     </div>
+    <button onclick="start()" style="position:absolute; z-index:9999">Start</button>
     <div class="effects">
       <img src="./src/attack.png" draggable="false" />
     </div>

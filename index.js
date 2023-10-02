@@ -10,6 +10,7 @@ const punchSound = document.querySelector("#punch-sound");
 const monsterSound = document.querySelector("#monster-sound");
 const uWinSound = document.querySelector("#u-win");
 const szwingSound = document.querySelector("#szwing");
+const healingSound = document.querySelector("#healing-sound");
 const gameOverSound = document.querySelector("#game-over");
 const heartsSus = document.querySelector(".left .hearts");
 const heartsUser = document.querySelector(".right .hearts");
@@ -155,11 +156,17 @@ setInterval(() => {
 setInterval(() => {
   if (isHamsterFairyActive) {
     //    console.log("healing");
+    healingSound.play();
     if (life < 3) life++;
     refreshHeartsInPanel();
   }
 }, 1000);
-
+healingSound.muted = true;
+healingSound.play();
+function start() {
+  healingSound.muted = false;
+  console.log("Click");
+}
 /////////////////////////////////////////////////////////////////////////////// prevent draging for img
 document.addEventListener("dragstart", function (event) {
   if (event.target.tagName == "IMG") {
