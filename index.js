@@ -20,11 +20,6 @@ const hamsterFairy = document.querySelector(".hamster-fairy");
 const healingHeart = document.querySelector(".healing-heart");
 
 refreshHeartsInPanel();
-// example
-setTimeout(() => {
-  console.log(cells[5].innerHTML);
-  cells[5].innerHTML = '<img src="./dr.png"  draggable="false"/>';
-}, 3000);
 
 // random showing sus
 const random = () => Math.round(Math.random() * 8);
@@ -37,15 +32,14 @@ setInterval(() => {
   }, 1000);
 }, 2000);
 
-//hummer movement
+//////////////////////////////////////////////////////////////////////////// hummer movement
 function hammerMovement(event) {
-  console.log(event);
+  //console.log(event);
   const x = event.clientX;
   const y = event.clientY;
-  console.log(x, y);
+  //console.log(x, y);
   hummer.style.left = x - 251 + "px";
   hummer.style.top = y - 210 + "px";
-
   hummer.style.transform = "rotate(115deg)";
   punchSound.play();
   setTimeout(() => {
@@ -59,10 +53,10 @@ hamsterFairy.addEventListener("click", hammerMovement);
 
 //compare hitting with sus position and some actions
 function clickOnCell(cellNumber) {
-  console.log(cellNumber, rand);
+  //console.log(cellNumber, rand);
   attempts--;
+  // colizion
   if (cellNumber == rand) {
-    // <-- colizion
     setTimeout(() => {
       life--;
       refreshHeartsInPanel();
@@ -102,6 +96,7 @@ function refreshHeartsInPanel() {
       '<img class="heart" src="./src/heard.png" draggable="false"/>';
   }
 }
+
 function hamsterAttack() {
   monsterSound.play();
   szwingSound.play();
@@ -110,21 +105,24 @@ function hamsterAttack() {
     effects.style.display = "none";
   }, 1000);
 }
+
 function gameOver() {
   gameOverScreen.style.display = "flex";
   gameOverSound.play();
 }
+
 function retry() {
   setTimeout(() => {
     location.reload();
   }, 1000);
 }
+
 function won() {
   youWinScreen.style.display = "flex";
   uWinSound.play();
 }
 
-/////////////////////////////////////////////////// hamster fairy block
+////////////////////////////////////////////////////////////////////////////// hamster fairy block
 
 let isHamsterFairyActive = false;
 
@@ -139,6 +137,7 @@ setInterval(() => {
 
 //get away fairy
 function getAwayFairy() {
+  console.log(1);
   hamsterFairy.style.right = "-200px";
   isHamsterFairyActive = false;
   healingHeart.style.display = "none";
@@ -153,16 +152,15 @@ setInterval(() => {
 }, 300);
 
 // hamster fairy healing per 1sec
-
 setInterval(() => {
   if (isHamsterFairyActive) {
-    console.log("healing");
+    //    console.log("healing");
     if (life < 3) life++;
     refreshHeartsInPanel();
   }
 }, 1000);
 
-//prevent draging for img
+/////////////////////////////////////////////////////////////////////////////// prevent draging for img
 document.addEventListener("dragstart", function (event) {
   if (event.target.tagName == "IMG") {
     event.preventDefault();

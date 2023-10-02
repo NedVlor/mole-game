@@ -181,13 +181,12 @@
         }
       }
       img {
-    -moz-user-select: none; /* Firefox */
-    -webkit-user-select: none; /* Chrome/Safari */
-    -ms-user-select: none; /* IE */
-    user-select: none; /* Standard */
-    pointer-events: none; /* Make it not clickable */
-}
-
+        -moz-user-select: none; /* Firefox */
+        -webkit-user-select: none; /* Chrome/Safari */
+        -ms-user-select: none; /* IE */
+        user-select: none; /* Standard */
+       /* pointer-events: none;  Make it not clickable */
+      }
     </style>
   </head>
   <body>
@@ -227,12 +226,7 @@
       src="./src/u-win.wav"
       style="display: none"
     ></audio>
-    <img
-      class="hamster-fairy"
-      src="./src/fairy.jpg"
-      onclick="getAwayFairy()"
-      draggable="false"
-    />
+    <img class="hamster-fairy" src="./src/fairy.jpg" onclick="getAwayFairy()" draggable="false" />
     <img class="hummer" src="./src/hummer.png" draggable="false" />
     <img class="healing-heart" src="./src/heard.png" draggable="false" />
     <div class="panel">
@@ -291,7 +285,7 @@
         <img src="./dr.png" draggable="false" />
       </div>
       <div class="cell" id="5" onclick="clickOnCell(5)">
-        <img src="./sas.png" draggable="false" />
+        <img src="./dr.png" draggable="false" />
       </div>
       <div class="cell" id="6" onclick="clickOnCell(6)">
         <img src="./dr.png" draggable="false" />
