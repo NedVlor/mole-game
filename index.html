@@ -155,6 +155,23 @@
       .you-win-screen img {
         filter: drop-shadow(0px 0px 150px #fff);
       }
+      .start-screen {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(0 0 0 / 100%);
+        /*display: none;*/
+        flex-direction: column;
+      }
+      .start-screen img {
+        /*filter: drop-shadow(0px 0px 150px #fff);*/
+      }
       .healing-heart {
         position: fixed;
         width: 2rem;
@@ -187,7 +204,6 @@
         user-select: none; /* Standard */
         /* pointer-events: none;  Make it not clickable */
       }
-      b
     </style>
   </head>
   <body>
@@ -260,7 +276,13 @@
         <div class="avatarA"></div>
       </div>
     </div>
-    <button onclick="start()" style="position:absolute; z-index:9999">Start</button>
+    <div class="start-screen">
+      <img src="./src/matrix-hamster.jpg" draggable="false" />
+      <div class="buttons">
+        <img src="./src/start-button.png" onclick="start()" />
+        <img src="./src/play-button.png" onclick="start()" />
+      </div>
+        </div>
     <div class="effects">
       <img src="./src/attack.png" draggable="false" />
     </div>
