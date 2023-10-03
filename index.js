@@ -19,6 +19,7 @@ const gameOverScreen = document.querySelector(".game-over-screen");
 const youWinScreen = document.querySelector(".you-win-screen");
 const hamsterFairy = document.querySelector(".hamster-fairy");
 const healingHeart = document.querySelector(".healing-heart");
+const startScreen = document.querySelector(".start-screen");
 
 refreshHeartsInPanel();
 
@@ -127,15 +128,6 @@ function won() {
 
 let isHamsterFairyActive = false;
 
-// muve fairy to game area
-setInterval(() => {
-  hamsterFairy.style.right = "100px";
-  setTimeout(() => {
-    isHamsterFairyActive = true;
-    healingHeart.style.display = "block";
-  }, 1000);
-}, 7000);
-
 //get away fairy
 function getAwayFairy() {
   console.log(1);
@@ -166,6 +158,15 @@ healingSound.play();
 function start() {
   healingSound.muted = false;
   console.log("Click");
+  startScreen.style.display = "none";
+  // muve fairy to game area
+  setInterval(() => {
+    hamsterFairy.style.right = "100px";
+    setTimeout(() => {
+      isHamsterFairyActive = true;
+      healingHeart.style.display = "block";
+    }, 1000);
+  }, 7000);
 }
 /////////////////////////////////////////////////////////////////////////////// prevent draging for img
 document.addEventListener("dragstart", function (event) {
