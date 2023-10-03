@@ -168,6 +168,15 @@
         background: rgb(0 0 0 / 100%);
         /*display: none;*/
         flex-direction: column;
+        background-image: url("./src/matrix.gif");
+      }
+      .substrate {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgb(0 0 0 / 68%);
+        top: 0;
+        left: 0;
       }
       .matrix-hamster {
         animation: matrixHamster 2s infinite;
@@ -322,6 +331,7 @@
       </div>
     </div>
     <div class="start-screen">
+        <div class="substrate"></div>
       <img
         class="matrix-hamster"
         src="./src/matrix-hamster.png"
