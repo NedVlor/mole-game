@@ -169,6 +169,19 @@
         /*display: none;*/
         flex-direction: column;
       }
+      .matrix-hamster {
+        animation: matrixHamster 2s infinite;
+        width: 35%;
+      }
+      @keyframes matrixHamster {
+        0% {
+        }
+        50% {
+          transform: scale(1.02, 1.01);
+        }
+        100% {
+        }
+      }
       .start-screen .buttons img:nth-child(1) {
         animation: police 1.5s infinite;
       }
@@ -309,7 +322,11 @@
       </div>
     </div>
     <div class="start-screen">
-      <img src="./src/matrix-hamster.jpg" draggable="false" />
+      <img
+        class="matrix-hamster"
+        src="./src/matrix-hamster.png"
+        draggable="false"
+      />
       <div class="buttons">
         <img src="./src/start-button.png" onclick="start()" />
         <img src="./src/play-button.png" onclick="start()" />
