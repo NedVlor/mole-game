@@ -2,6 +2,7 @@ let rand;
 let life = 3;
 let userLife = 3;
 let attempts = 3;
+const rightChoice = Math.round(Math.random() * 1);
 const cells = document.querySelectorAll(".bar .cell");
 const bar = document.querySelector(".bar");
 const hummer = document.querySelector(".hummer");
@@ -153,12 +154,16 @@ setInterval(() => {
     refreshHeartsInPanel();
   }
 }, 1000);
+
 healingSound.muted = true;
 healingSound.play();
-function start() {
+
+function start(n) {
   healingSound.muted = false;
-  console.log("Click");
   startScreen.style.display = "none";
+  if (n != rightChoice) {
+  }
+
   // muve fairy to game area
   setInterval(() => {
     hamsterFairy.style.right = "100px";

@@ -155,7 +155,8 @@
       .you-win-screen img {
         filter: drop-shadow(0px 0px 150px #fff);
       }
-      .start-screen {
+
+      .morpheus-screen {
         position: fixed;
         z-index: 1000;
         left: 0;
@@ -170,6 +171,29 @@
         flex-direction: column;
         background-image: url("./src/matrix.gif");
       }
+      .morpheus-hamster {
+        z-index: 2;
+      }
+      .morpheus-message {
+        color: white;
+        font-size: 5rem;
+      }
+
+      .start-screen {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(0 0 0 / 100%);
+        display: none;
+        flex-direction: column;
+        background-image: url("./src/matrix.gif");
+      }
       .substrate {
         position: fixed;
         width: 100vw;
@@ -179,7 +203,7 @@
         left: 0;
       }
       .matrix-hamster {
-        animation: matrixHamster 2s infinite;
+        animation: matrixhamster 2s infinite;
         width: 35%;
       }
       @keyframes matrixHamster {
@@ -330,17 +354,25 @@
         <div class="avatarA"></div>
       </div>
     </div>
+
     <div class="start-screen">
-        <div class="substrate"></div>
+      <div class="substrate"></div>
       <img
         class="matrix-hamster"
         src="./src/matrix-hamster.png"
         draggable="false"
       />
       <div class="buttons">
-        <img src="./src/start-button.png" onclick="start()" />
-        <img src="./src/play-button.png" onclick="start()" />
+        <img src="./src/start-button.png" onclick="start(0)" />
+        <img src="./src/play-button.png" onclick="start(1)" />
       </div>
+    </div>
+
+    <div class="morpheus-screen">
+      <div class="substrate"></div>
+      <img class="morpheus-hamster" src="./src/morfius.png" draggable="false" />
+      <div class="timer"></div>
+      <div class="morpheus-message">You did wrong choice!</div>
     </div>
     <div class="effects">
       <img src="./src/attack.png" draggable="false" />
