@@ -3,6 +3,10 @@
   <head>
     <title>Mole-game</title>
     <style>
+      @font-face {
+        font-family: "Alarm Clock";
+        src: url("./alarm-clock.ttf") format("truetype");
+      }
       body {
         background: #181a1e;
         margin: 0;
@@ -179,6 +183,12 @@
         font-size: 5rem;
       }
 
+      .timer {
+        color: green;
+        z-index: 2;
+        font-size: 4rem;
+        font-family: "Alarm Clock", sans-serif;
+      }
       .start-screen {
         position: fixed;
         z-index: 1000;
@@ -370,8 +380,8 @@
 
     <div class="morpheus-screen">
       <div class="substrate"></div>
+      <div class="timer">00:00:66</div>
       <img class="morpheus-hamster" src="./src/morfius.png" draggable="false" />
-      <div class="timer"></div>
       <div class="morpheus-message">You did wrong choice!</div>
     </div>
     <div class="effects">
