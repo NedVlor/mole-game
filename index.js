@@ -21,6 +21,7 @@ const youWinScreen = document.querySelector(".you-win-screen");
 const hamsterFairy = document.querySelector(".hamster-fairy");
 const healingHeart = document.querySelector(".healing-heart");
 const startScreen = document.querySelector(".start-screen");
+const timerDOM = document.querySelector(".timer");
 
 refreshHeartsInPanel();
 
@@ -157,6 +158,13 @@ setInterval(() => {
 
 healingSound.muted = true;
 healingSound.play();
+
+let secoundsToReload = 66;
+setInterval(() => {
+  secoundsToReload--;
+  timerDOM.innerHTML = "00:00:" + secoundsToReload;
+  if (secoundsToReload < 1) location.reload();
+}, 1000);
 
 function start(n) {
   healingSound.muted = false;
