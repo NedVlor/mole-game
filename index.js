@@ -164,6 +164,8 @@ function start(n) {
   healingSound.muted = false;
   startScreen.style.display = "none";
   if (n != rightChoice) {
+    const sound = new Audio("./src/matrix-sound.mp3");
+    sound.play();
     morpheusScreen.style.display = "flex";
     let secoundsToReload = 15;
     setInterval(() => {
