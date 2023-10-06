@@ -22,6 +22,7 @@ const hamsterFairy = document.querySelector(".hamster-fairy");
 const healingHeart = document.querySelector(".healing-heart");
 const startScreen = document.querySelector(".start-screen");
 const timerDOM = document.querySelector(".timer");
+const morpheusScreen = document.querySelector(".morpheus-screen");
 
 refreshHeartsInPanel();
 
@@ -159,17 +160,18 @@ setInterval(() => {
 healingSound.muted = true;
 healingSound.play();
 
-let secoundsToReload = 66;
-setInterval(() => {
-  secoundsToReload--;
-  timerDOM.innerHTML = "00:00:" + secoundsToReload;
-  if (secoundsToReload < 1) location.reload();
-}, 1000);
-
 function start(n) {
   healingSound.muted = false;
   startScreen.style.display = "none";
   if (n != rightChoice) {
+    morpheusScreen.style.display = "flex";
+    let secoundsToReload = 15;
+    setInterval(() => {
+      secoundsToReload--;
+      timerDOM.innerHTML = "00:00:" + secoundsToReload;
+      if (secoundsToReload < 1) location.reload();
+    }, 1000);
+    return;
   }
 
   // muve fairy to game area
